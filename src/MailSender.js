@@ -1,8 +1,8 @@
-const nodemailder = require('nodemailer');
+const nodemailer = require('nodemailer');
 
 class MailSender {
   constructor() {
-    this._tarnsporter = nodemailder.createTransport({
+    this._transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMPT_PORT,
       auth: {
@@ -26,7 +26,7 @@ class MailSender {
       ],
     };
 
-    return this._tarnsporter.sendMail(message);
+    return this._transporter.sendMail(message);
   }
 }
 
